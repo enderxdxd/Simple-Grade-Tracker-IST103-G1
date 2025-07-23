@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Entry</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Grade Entry</h1>
+    <nav>
+      <a href="index.html">Dashboard</a> |
+      <a href="add-course.html"> Add Course</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Grade Entry Form -->
+    <section id="grade-entry">
+      <h2>ENTER GRADES</h2>
+      <form id="gradeForm">
+        <label for="courseSelect">Course:</label>
+        <select id="courseSelect" name="course">
+          <!-- Options will be added dynamically with JavaScript -->
+          <option value="">--Select a course--</option>
+        </select>
+
+        <label for="assignment">Assignment:</label>
+        <input type="text" id="assignment" name="assignment" required>
+
+        <label for="score">Grade:</label>
+        <input type="number" id="score" name="score" min="0" max="100" required> /
+        <input type="number" id="maxScore" name="maxScore" min="1" required> points
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required value="2024-03-20">
+
+        <button type="submit">Add Grade</button>
+      </form>
+    </section>
+
+    <!-- Display of Recent Grades -->
+    <section id="recent-grades">
+      <h2>RECENT GRADES</h2>
+      <div id="gradeList">
+        <!-- This will be dynamically populated by JavaScript -->
+        <h3>Web Development:</h3>
+        <ul>
+          <li>• Project 1: 85/100 (Mar 15)</li>
+          <li>• Quiz 1: 92/100 (Mar 10)</li>
+          <li>• Homework 1: 88/100 (Mar 5)</li>
+        </ul>
+        <p><strong>Course Average: 88.3% (B+)</strong></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
