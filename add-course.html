@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course - My Grade Tracker</title>
+    <meta name="description" content="Adicione um novo curso ao seu Grade Tracker">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="add-course-container">
+        <header class="page-header" aria-labelledby="add-course-title">
+            <h1 id="add-course-title">ADD NEW COURSE</h1>
+            <a href="index.html" class="back-link" aria-label="Return to dashboard">
+                <span class="fas fa-arrow-left"></span> Back to Dashboard
+            </a>
+        </header>
+
+        <main>
+            <form class="course-form" id="new-course-form" aria-labelledby="add-course-title">
+                <div class="form-group">
+                    <label for="course-name">Course Name</label>
+                    <input type="text" id="course-name" name="course-name" required 
+                           placeholder="e.g., Computer Science 101" aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="credits">Credits</label>
+                    <select id="credits" name="credits" required aria-required="true">
+                        <option value="" disabled selected>Select credits</option>
+                        <option value="1">1 credit</option>
+                        <option value="2">2 credits</option>
+                        <option value="3">3 credits</option>
+                        <option value="4">4 credits</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="instructor">Instructor</label>
+                    <input type="text" id="instructor" name="instructor" required
+                           placeholder="Instructor's name" aria-required="true">
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="save-btn">
+                        <span class="fas fa-save"></span> Save Course
+                    </button>
+                    <a href="index.html" class="cancel-btn">
+                        <span class="fas fa-times"></span> Cancel
+                    </a>
+                </div>
+            </form>
+
+            <aside class="course-list-section" aria-labelledby="course-list-title">
+                <h3 id="course-list-title">YOUR COURSES</h3>
+                <ul class="course-list" aria-label="List of your current courses">
+                    <li>
+                        <span class="course-name">Web Development</span>
+                        <span class="course-credits">(3 credits)</span>
+                    </li>
+                    <li>
+                        <span class="course-name">Mathematics</span>
+                        <span class="course-credits">(4 credits)</span>
+                    </li>
+                    <li>
+                        <span class="course-name">English Literature</span>
+                        <span class="course-credits">(3 credits)</span>
+                    </li>
+                </ul>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>
