@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Grade Tracker - Dashboard</title>
+    <meta name="description" content="Acompanhe suas notas e desempenho acadêmico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header" aria-labelledby="page-title">
+            <h1 id="page-title">MY GRADE TRACKER</h1>
+            <div class="gpa-summary">
+                <p><span class="sr-only">Current GPA:</span> <span class="highlight" aria-label="3.5 out of 4.0">3.5/4.0</span></p>
+                <p><span class="sr-only">Total Courses:</span> <span class="highlight">3</span></p>
+            </div>
+        </header>
+
+        <main>
+            <section class="courses-section" aria-labelledby="courses-title">
+                <h2 id="courses-title">MY COURSES</h2>
+                
+                <div class="course-cards">
+                    <article class="course-card" aria-labelledby="web-dev-title">
+                        <div class="course-info">
+                            <h3 id="web-dev-title">Web Development</h3>
+                            <p>Current Grade: <span class="grade-b" aria-label="B plus, 87 percent">B+ (87%)</span></p>
+                            <p>Assignments: <span class="assignments">3 completed</span></p>
+                        </div>
+                        <a href="#" class="view-details-btn" aria-label="View details for Web Development course">
+                            View Details <span class="fas fa-chevron-right"></span>
+                        </a>
+                    </article>
+                    
+                    <article class="course-card" aria-labelledby="math-title">
+                        <div class="course-info">
+                            <h3 id="math-title">Mathematics</h3>
+                            <p>Current Grade: <span class="grade-a" aria-label="A minus, 90 percent">A- (90%)</span></p>
+                            <p>Assignments: <span class="assignments">2 completed</span></p>
+                        </div>
+                        <a href="#" class="view-details-btn" aria-label="View details for Mathematics course">
+                            View Details <span class="fas fa-chevron-right"></span>
+                        </a>
+                    </article>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="add-course.html" class="add-course-btn">
+                        <span class="fas fa-plus"></span> Add New Course
+                    </a>
+                    <a href="#" class="view-all-btn">
+                        <span class="fas fa-list"></span> View All Grades
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
