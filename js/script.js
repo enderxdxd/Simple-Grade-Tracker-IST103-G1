@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function populateCourseOptions() {
     const select = document.getElementById("courseSelect");
-    select.innerHTML = '<option value="">--Select a course--</option>'; // 初期化
+    select.innerHTML = '<option value="">--Select a course--</option>'; // Initialize
   
     courses.forEach(course => {
       const option = document.createElement("option");
