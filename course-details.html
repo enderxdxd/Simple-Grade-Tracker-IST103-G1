@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Grade Tracker</title>
+    <meta name="description" content="View detailed information about your course performance">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+    <div class="course-details-container">
+        <header class="page-header" aria-labelledby="course-title">
+            <div class="header-content">
+                <div class="course-badge-large">
+                    <i class="fas fa-book" id="course-icon"></i>
+                </div>
+                <div class="course-header-info">
+                    <h1 id="course-title">Course Name</h1>
+                    <p class="course-meta">
+                        <span class="instructor-name" id="instructor-name">Instructor</span>
+                        <span class="separator">•</span>
+                        <span class="course-credits" id="course-credits">3 Credits</span>
+                    </p>
+                </div>
+            </div>
+            <a href="index.html" class="back-link" aria-label="Return to dashboard">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </header>
+
+        <main>
+            <!-- Course Summary Cards -->
+            <section class="summary-section" aria-labelledby="summary-title">
+                <h2 id="summary-title" class="sr-only">Course Summary</h2>
+                <div class="summary-cards">
+                    <div class="summary-card grade-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-label">Current Grade</span>
+                            <span class="card-value" id="current-grade">--</span>
+                            <span class="card-subtitle" id="letter-grade">Not Available</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card assignments-card">
+                        <div class="card-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-label">Assignments</span>
+                            <span class="card-value" id="total-assignments">0</span>
+                            <span class="card-subtitle">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card average-card">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-label">Average Score</span>
+                            <span class="card-value" id="average-score">--</span>
+                            <span class="card-subtitle">Per Assignment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card trend-card">
+                        <div class="card-icon">
+                            <i class="fas fa-trending-up" id="trend-icon"></i>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-label">Trend</span>
+                            <span class="card-value" id="trend-value">--</span>
+                            <span class="card-subtitle" id="trend-text">No Data</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grades List -->
+            <section class="grades-section" aria-labelledby="grades-title">
+                <div class="section-header">
+                    <h2 id="grades-title">
+                        <i class="fas fa-list-alt"></i>
+                        Assignment Grades
+                    </h2>
+                    <a href="grades.html" class="add-grade-btn">
+                        <i class="fas fa-plus"></i>
+                        Add Grade
+                    </a>
+                </div>
+                
+                <div class="grades-table-container">
+                    <table class="grades-table" id="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Assignment</th>
+                                <th>Score</th>
+                                <th>Percentage</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="grades-tbody">
+                            <!-- Grades will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                    
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>No Grades Yet</h3>
+                        <p>Start adding assignment grades to track your progress in this course.</p>
+                        <a href="grades.html" class="empty-action-btn">
+                            <i class="fas fa-plus"></i>
+                            Add First Grade
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grade Distribution Chart -->
+            <section class="chart-section" aria-labelledby="chart-title">
+                <div class="section-header">
+                    <h2 id="chart-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Grade Distribution
+                    </h2>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="grade-ranges" id="grade-ranges">
+                        <div class="range-item">
+                            <span class="range-label">A (90-100%)</span>
+                            <div class="range-bar">
+                                <div class="range-fill" data-grade="A"></div>
+                            </div>
+                            <span class="range-count" id="count-A">0</span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-label">B (80-89%)</span>
+                            <div class="range-bar">
+                                <div class="range-fill" data-grade="B"></div>
+                            </div>
+                            <span class="range-count" id="count-B">0</span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-label">C (70-79%)</span>
+                            <div class="range-bar">
+                                <div class="range-fill" data-grade="C"></div>
+                            </div>
+                            <span class="range-count" id="count-C">0</span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-label">D (60-69%)</span>
+                            <div class="range-bar">
+                                <div class="range-fill" data-grade="D"></div>
+                            </div>
+                            <span class="range-count" id="count-D">0</span>
+                        </div>
+                        <div class="range-item">
+                            <span class="range-label">F (Below 60%)</span>
+                            <div class="range-bar">
+                                <div class="range-fill" data-grade="F"></div>
+                            </div>
+                            <span class="range-count" id="count-F">0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Course Actions -->
+            <section class="actions-section">
+                <div class="action-buttons">
+                    <a href="grades.html" class="primary-btn">
+                        <i class="fas fa-plus"></i>
+                        Add New Grade
+                    </a>
+                   
+                    <button class="danger-btn" id="delete-course-btn">
+                        <i class="fas fa-trash"></i>
+                        Delete Course
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/course-details.js"></script>
+</body>
+</html>

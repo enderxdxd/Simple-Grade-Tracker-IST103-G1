@@ -3,60 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Grade Tracker - Dashboard</title>
-    <meta name="description" content="Track your grades and academic performance">
+    <title>Grade Tracker - Dashboard</title>
+    <meta name="description" content="Track your academic progress with our comprehensive grade tracking system">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 </head>
 <body>
     <div class="dashboard-container">
         <header class="dashboard-header" aria-labelledby="page-title">
-            <h1 id="page-title">MY GRADE TRACKER</h1>
+            <div class="header-content">
+                <h1 id="page-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    GRADE TRACKER
+                </h1>
+                <p class="header-subtitle">Track your academic journey with precision</p>
+            </div>
             <div class="gpa-summary">
-                <p><span class="sr-only">Current GPA:</span> <span class="highlight" aria-label="3.5 out of 4.0">3.5/4.0</span></p>
-                <p><span class="sr-only">Total Courses:</span> <span class="highlight">3</span></p>
+                <div class="gpa-item">
+                    <span class="gpa-label">Current GPA</span>
+                    <span class="highlight gpa-value" aria-label="Current GPA out of 4.0">0.0/4.0</span>
+                </div>
+                <div class="gpa-item">
+                    <span class="gpa-label">Total Courses</span>
+                    <span class="highlight course-count">0</span>
+                </div>
             </div>
         </header>
 
         <main>
             <section class="courses-section" aria-labelledby="courses-title">
-                <h2 id="courses-title">MY COURSES</h2>
+                <div class="section-header">
+                    <h2 id="courses-title">
+                        <i class="fas fa-book-open"></i>
+                        MY COURSES
+                    </h2>
+                </div>
                 
-                <div class="course-cards">
-                    <article class="course-card" aria-labelledby="web-dev-title">
-                        <div class="course-info">
-                            <h3 id="web-dev-title">Web Development</h3>
-                            <p>Current Grade: <span class="grade-b" aria-label="B plus, 87 percent">B+ (87%)</span></p>
-                            <p>Assignments: <span class="assignments">3 completed</span></p>
+                <div class="course-cards" id="course-cards-container">
+                    <!-- Courses will be populated by JavaScript -->
+                    <div class="empty-dashboard-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <a href="#" class="view-details-btn" aria-label="View details for Web Development course">
-                            View Details <span class="fas fa-chevron-right"></span>
+                        <h3>Welcome to Grade Tracker!</h3>
+                        <p>Start by adding your first course to begin tracking your academic progress.</p>
+                        <a href="add-course.html" class="get-started-btn">
+                            <i class="fas fa-plus"></i>
+                            Add Your First Course
                         </a>
-                    </article>
-                    
-                    <article class="course-card" aria-labelledby="math-title">
-                        <div class="course-info">
-                            <h3 id="math-title">Mathematics</h3>
-                            <p>Current Grade: <span class="grade-a" aria-label="A minus, 90 percent">A- (90%)</span></p>
-                            <p>Assignments: <span class="assignments">2 completed</span></p>
-                        </div>
-                        <a href="#" class="view-details-btn" aria-label="View details for Mathematics course">
-                            View Details <span class="fas fa-chevron-right"></span>
-                        </a>
-                    </article>
+                    </div>
                 </div>
                 
                 <div class="action-buttons">
                     <a href="add-course.html" class="add-course-btn">
-                        <span class="fas fa-plus"></span> Add New Course
+                        <i class="fas fa-plus"></i>
+                        Add New Course
                     </a>
                     <a href="grades.html" class="view-all-btn">
-                        <span class="fas fa-list"></span> View All Grades
+                        <i class="fas fa-list"></i>
+                        Enter Grades
                     </a>
+                </div>
+            </section>
+
+            <section class="quick-info">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Academic Progress</h3>
+                            <p>Keep track of your grades across all courses and monitor your academic performance in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Goal Tracking</h3>
+                            <p>Set academic goals and track your progress towards achieving your desired GPA and course outcomes.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
+    
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>

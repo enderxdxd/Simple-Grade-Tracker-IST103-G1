@@ -1,62 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Grade Entry</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Entry - Grade Tracker</title>
+    <meta name="description" content="Enter and track your assignment grades">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
 </head>
 <body>
-  <header>
-    <h1>Grade Entry</h1>
-    <nav>
-      <a href="index.html">Dashboard</a> |
-      <a href="add-course.html"> Add Course</a>
-    </nav>
-  </header>
+    <header>
+        <div class="header-content">
+            <h1>
+                <i class="fas fa-clipboard-list"></i>
+                GRADE ENTRY
+            </h1>
+            <p class="header-subtitle">Record your academic achievements</p>
+        </div>
+        <nav>
+            <a href="index.html">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </a>
+            <a href="add-course.html">
+                <i class="fas fa-plus"></i>
+                Add Course
+            </a>
+        </nav>
+    </header>
 
-  <main>
-    <!-- Grade Entry Form -->
-    <section id="grade-entry">
-      <h2>ENTER GRADES</h2>
-      <form id="gradeForm">
-        <label for="courseSelect">Course:</label>
-        <select id="courseSelect" name="course">
-          <!-- Options will be added dynamically with JavaScript -->
-          <option value="">--Select a course--</option>
-        </select>
+    <main>
+        <!-- Grade Entry Form -->
+        <section id="grade-entry">
+            <h2>
+                <i class="fas fa-pen"></i>
+                ENTER GRADES
+            </h2>
+            <form id="gradeForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="courseSelect">
+                            <i class="fas fa-book"></i>
+                            Course
+                        </label>
+                        <select id="courseSelect" name="course" required>
+                            <option value="">--Select a course--</option>
+                        </select>
+                    </div>
+                </div>
 
-        <label for="assignment">Assignment:</label>
-        <input type="text" id="assignment" name="assignment" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="assignment">
+                            <i class="fas fa-tasks"></i>
+                            Assignment
+                        </label>
+                        <input 
+                            type="text" 
+                            id="assignment" 
+                            name="assignment" 
+                            required
+                            placeholder="e.g., Midterm Exam, Project 1"
+                            maxlength="100"
+                        >
+                    </div>
+                </div>
 
-        <label for="score">Grade:</label>
-        <input type="number" id="score" name="score" min="0" max="100" required> Total Grade
-        <input type="number" id="maxScore" name="maxScore" min="1" required> 
+                <div class="form-row two-columns">
+                    <div class="form-group">
+                        <label for="score">
+                            <i class="fas fa-trophy"></i>
+                            Points Earned
+                        </label>
+                        <input 
+                            type="number" 
+                            id="score" 
+                            name="score" 
+                            min="0" 
+                            step="0.5" 
+                            required
+                            placeholder="85"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="maxScore">
+                            <i class="fas fa-bullseye"></i>
+                            Total Points
+                        </label>
+                        <input 
+                            type="number" 
+                            id="maxScore" 
+                            name="maxScore" 
+                            min="1" 
+                            step="0.5" 
+                            required
+                            placeholder="100"
+                        >
+                    </div>
+                </div>
 
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required value="2024-03-20">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">
+                            <i class="fas fa-calendar"></i>
+                            Date
+                        </label>
+                        <input 
+                            type="date" 
+                            id="date" 
+                            name="date" 
+                            required
+                        >
+                    </div>
+                </div>
 
-        <button type="submit">Add Grade</button>
-      </form>
-    </section>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-plus-circle"></i>
+                    Add Grade
+                </button>
+            </form>
+        </section>
 
-    <!-- Display of Recent Grades -->
-    <section id="recent-grades">
-      <h2>RECENT GRADES</h2>
-      <div id="gradeList">
-        <!-- This will be dynamically populated by JavaScript -->
-        <h3>Web Development:</h3>
-        <ul>
-          <li>• Project 1: 85/100 (Mar 15)</li>
-          <li>• Quiz 1: 92/100 (Mar 10)</li>
-          <li>• Homework 1: 88/100 (Mar 5)</li>
-        </ul>
-        <p><strong>Course Average: 88.3% (B+)</strong></p>
-      </div>
-    </section>
-  </main>
-  
+        <!-- Display of Recent Grades -->
+        <section id="recent-grades">
+            <h2>
+                <i class="fas fa-chart-bar"></i>
+                RECENT GRADES
+            </h2>
+            <div id="gradeList">
+                <div class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>Select a course to view grades</p>
+                    <p class="help-text">Choose a course from the dropdown above to see your recorded grades and course average.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
 </body>
-<script src="js/data.js"></script>
-<script src="js/script.js"></script>
-<script src="js/grades.js"></script>
 </html>
